@@ -1,0 +1,86 @@
+{
+  "qwen": [
+    {
+      "prompt": "What's the weather like in Tokyo right now?",
+      "output": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}\n</tool_call>"
+    },
+    {
+      "prompt": "Is it raining in London?",
+      "output": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"London\"}}\n</tool_call>"
+    },
+    {
+      "prompt": "Tell me the temperature in New York.",
+      "output": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"New York\"}}\n</tool_call>"
+    },
+    {
+      "prompt": "Check the weather for Mumbai.",
+      "output": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Mumbai\"}}\n</tool_call>"
+    },
+    {
+      "prompt": "How hot is it in Dubai today?",
+      "output": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Dubai\"}}\n</tool_call>"
+    },
+    {
+      "prompt": "What's the forecast for Paris?",
+      "output": "I can check the current weather in Paris for you. However, please note that this might not be the same as the forecast. Would you like to proceed with the current weather?\n<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Paris\"}}\n</tool_call>"
+    },
+    {
+      "prompt": "Is Berlin cold right now?",
+      "output": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Berlin\"}}\n</tool_call>"
+    },
+    {
+      "prompt": "Weather in Sydney please.",
+      "output": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Sydney\"}}\n</tool_call>"
+    },
+    {
+      "prompt": "Can you check Singapore's weather?",
+      "output": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Singapore\"}}\n</tool_call>"
+    },
+    {
+      "prompt": "What's the current weather in Cairo?",
+      "output": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Cairo\"}}\n</tool_call>"
+    }
+  ],
+  "llama": [
+    {
+      "prompt": "What's the weather like in Tokyo right now?",
+      "output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Tokyo\"}}"
+    },
+    {
+      "prompt": "Is it raining in London?",
+      "output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"London\"}}"
+    },
+    {
+      "prompt": "Tell me the temperature in New York.",
+      "output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"New York\"}}"
+    },
+    {
+      "prompt": "Check the weather for Mumbai.",
+      "output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Mumbai\"}}"
+    },
+    {
+      "prompt": "How hot is it in Dubai today?",
+      "output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Dubai\"}}"
+    },
+    {
+      "prompt": "What's the forecast for Paris?",
+      "output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Paris\"}}"
+    },
+    {
+      "prompt": "Is Berlin cold right now?",
+      "output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Berlin\"}}"
+    },
+    {
+      "prompt": "Weather in Sydney please.",
+      "output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Sydney\"}}"
+    },
+    {
+      "prompt": "Can you check Singapore's weather?",
+      "output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Singapore\"}}"
+    },
+    {
+      "prompt": "What's the current weather in Cairo?",
+      "output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Cairo\"}}"
+    }
+  ]
+}
