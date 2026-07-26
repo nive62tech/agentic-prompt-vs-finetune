@@ -1,0 +1,180 @@
+[
+  {
+    "id": "t3_001",
+    "prompt": "What's the weather in Atlantis?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Atlantis"
+        }
+      }
+    ],
+    "final_text": "The function `get_weather` was called with the city \"Atlantis\", but the city was not found.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_002",
+    "prompt": "Find a flight from Cairo to Sydney and book it.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Cairo",
+          "destination": "Sydney"
+        }
+      }
+    ],
+    "final_text": "The code above first searches for flights from Cairo to Sydney and then books the first flight found. However, since we don't know the result of the search, we can't provide the actual flight_id to book the flight. If no flights are found, the result will be an error message.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_003",
+    "prompt": "Convert 100 USD to XAU.",
+    "tool_calls": [
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 100,
+          "base": "USD",
+          "target": "XAU"
+        }
+      }
+    ],
+    "final_text": "The function `convert_currency` does not support the currency pair USD->XAU. XAU is the code for gold, not a currency. The function requires a valid currency code as the target currency.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_004",
+    "prompt": "What's the price of a smartwatch?",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "smartwatch"
+        }
+      }
+    ],
+    "final_text": "The function `lookup_price` returned an error because the item \"smartwatch\" was not found in the catalog.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_005",
+    "prompt": "Book flight ZZ999 for me.",
+    "tool_calls": [
+      {
+        "tool": "book_flight",
+        "args": {
+          "flight_id": "ZZ999"
+        }
+      }
+    ],
+    "final_text": "The function `book_flight` requires a valid flight_id, but ZZ999 is not a valid flight_id. The function call should be modified to provide a valid flight_id.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_006",
+    "prompt": "What's on my calendar for 2026-08-10?",
+    "tool_calls": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-10"
+        }
+      }
+    ],
+    "final_text": "This response indicates that there is no calendar data available for the specified date.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_007",
+    "prompt": "Find a flight from Berlin to Cairo and book the cheapest one.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Berlin",
+          "destination": "Cairo"
+        }
+      }
+    ],
+    "final_text": "The code above assumes that we have the cheapest flight id after searching flights from Berlin to Cairo. If no flights are found, it will return an error message. \n\nIn a real-world scenario, you would need to get the flight id from the search_flights function and then use it in the book_flight function.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_008",
+    "prompt": "What's the exchange rate from USD to XAU?",
+    "tool_calls": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "USD",
+          "target": "XAU"
+        }
+      }
+    ],
+    "final_text": "The function `get_currency_rate` does not support the currency pair \"USD->XAU\". The function requires a 3-letter code for the target currency, but \"XAU\" is not a valid 3-letter code. The correct 3-letter code for gold is \"AUD\" (Australian dollar) or \"XAU\" is not a valid currency code, but \"XAU\" is a valid code for Gold, but it's not a currency, it's a commodity.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_009",
+    "prompt": "What's on my calendar for 2026-08-04? Let me know if anything looks off.",
+    "tool_calls": [],
+    "final_text": "{\"name\": \"get_calendar_events\", \"parameters\": {\"date\": \"2026-08-04}}",
+    "grade": {
+      "success": false,
+      "failure_type": "missing_call",
+      "detail": "no tool call made"
+    }
+  },
+  {
+    "id": "t3_010",
+    "prompt": "Look up the price of a tablet.",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "tablet"
+        }
+      }
+    ],
+    "final_text": "The function \"lookup_price\" returned an error message indicating that the item \"tablet\" was not found in the catalog.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  }
+]

@@ -1,0 +1,303 @@
+[
+  {
+    "id": "t1_001",
+    "prompt": "What's the weather like in Tokyo right now?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Tokyo"
+        }
+      }
+    ],
+    "final_text": "This JSON response indicates that the current temperature in Tokyo is 27 degrees Celsius and the weather is clear.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_002",
+    "prompt": "Is it raining in London?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "London"
+        }
+      }
+    ],
+    "final_text": "This JSON response indicates that it is rainy in London with a temperature of 16 degrees Celsius.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_003",
+    "prompt": "Tell me the temperature in New York.",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "New York"
+        }
+      }
+    ],
+    "final_text": "The function `get_weather` is called with the argument `city` set to \"New York\". The response is a JSON object containing the current temperature and condition in New York.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_004",
+    "prompt": "Check the weather for Mumbai.",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Mumbai"
+        }
+      }
+    ],
+    "final_text": "This is a hypothetical response, as the actual response would depend on the current weather in Mumbai.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_005",
+    "prompt": "How hot is it in Dubai today?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Dubai"
+        }
+      }
+    ],
+    "final_text": "This response assumes that the get_weather function returns a JSON object with the current temperature and condition in the city. The actual response may vary based on the function's implementation.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_006",
+    "prompt": "What's the price of a laptop?",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "laptop"
+        }
+      }
+    ],
+    "final_text": "This function call will return the price of a laptop in USD.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_007",
+    "prompt": "How much do headphones cost?",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "headphones"
+        }
+      }
+    ],
+    "final_text": "This function call assumes that the `lookup_price` function returns a dictionary with the price of the item in USD. The actual output may vary based on the implementation of the `lookup_price` function.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_008",
+    "prompt": "What's the price on a monitor?",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "monitor"
+        }
+      }
+    ],
+    "final_text": "This function call will return the price of a monitor in USD.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_009",
+    "prompt": "Check the price of a keyboard for me.",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "keyboard"
+        }
+      }
+    ],
+    "final_text": "This function call will look up the price of a keyboard in the catalog. The response will be a JSON object containing the price of the keyboard in USD.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_010",
+    "prompt": "What's my exchange rate from USD to EUR?",
+    "tool_calls": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "USD",
+          "target": "EUR"
+        }
+      }
+    ],
+    "final_text": "This function call will return the current exchange rate between USD and EUR.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_011",
+    "prompt": "What is the GBP to USD exchange rate?",
+    "tool_calls": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "GBP",
+          "target": "USD"
+        }
+      }
+    ],
+    "final_text": "This function call will return the current exchange rate between GBP and USD.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_012",
+    "prompt": "Convert 100 USD to EUR.",
+    "tool_calls": [
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 100,
+          "base": "USD",
+          "target": "EUR"
+        }
+      }
+    ],
+    "final_text": "This function call converts 100 USD to EUR. The result is 92.0 EUR.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_013",
+    "prompt": "How much is 50 USD in INR?",
+    "tool_calls": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "USD",
+          "target": "INR"
+        }
+      }
+    ],
+    "final_text": "This response assumes that the exchange rate between USD and INR is 83.1. The actual exchange rate may vary depending on the current market rate.",
+    "grade": {
+      "success": false,
+      "failure_type": "wrong_tool",
+      "detail": "expected convert_currency, got get_currency_rate"
+    }
+  },
+  {
+    "id": "t1_014",
+    "prompt": "What's on my calendar for 2026-08-01?",
+    "tool_calls": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-01"
+        }
+      }
+    ],
+    "final_text": "This function call will return a JSON object with the calendar events for the specified date. The actual events will depend on the data available in the calendar.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_015",
+    "prompt": "Do I have anything scheduled on 2026-08-03?",
+    "tool_calls": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-03"
+        }
+      }
+    ],
+    "final_text": "This function call will return a JSON object with the calendar events for the given date. The actual output will depend on the data available in the calendar.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_016",
+    "prompt": "Search for flights from Tokyo to London.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Tokyo",
+          "destination": "London"
+        }
+      },
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Tokyo",
+          "destination": "London"
+        }
+      }
+    ],
+    "final_text": "The function `search_flights` was called with the arguments `origin=\"Tokyo\"` and `destination=\"London\"`. The response was a JSON object containing a list of flights between the two cities.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  }
+]
