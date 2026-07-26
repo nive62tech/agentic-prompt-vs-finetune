@@ -77,7 +77,8 @@ def optimize(lm, training_examples: list):
     optimizer = dspy.MIPROv2(metric=tier1_metric, auto="light")
     optimized_program = optimizer.compile(
         program, trainset=trainset,
-        max_bootstrapped_demos=2, max_labeled_demos=4,
+        max_bootstrapped_demos=1, max_labeled_demos=2,
+        num_threads=1,
     )
     return optimized_program
 

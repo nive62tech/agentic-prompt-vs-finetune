@@ -8,6 +8,7 @@ model we used for the baseline, no separate API needed.
 """
 
 import dspy
+import torch
 
 
 class LocalLlamaLM(dspy.LM):
@@ -44,4 +45,6 @@ class LocalLlamaLM(dspy.LM):
         decoded = self.tokenizer.decode(
             out[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True
         )
+        del inputs, out
+        torch.cuda.empty_cache()
         return [decoded]
