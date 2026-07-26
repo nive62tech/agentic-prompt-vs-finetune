@@ -74,11 +74,12 @@ def optimize(lm, training_examples: list):
     program = ToolCallProgram()
     trainset = build_trainset(training_examples)
 
-    optimizer = dspy.MIPROv2(metric=tier1_metric, auto="light")
+    optimizer = dspy.MIPROv2(metric=tier1_metric, auto="light", num_threads=1)
     optimized_program = optimizer.compile(
         program, trainset=trainset,
         max_bootstrapped_demos=1, max_labeled_demos=2,
-        num_threads=1,
+        minibatch=False,
+        requires_permission_to_run=False,
     )
     return optimized_program
 
