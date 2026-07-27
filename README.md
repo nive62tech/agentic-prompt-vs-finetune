@@ -54,9 +54,21 @@ multiple data regimes.
   `results/tier1_dspy_n10_results.json`, `results/tier1_qlora_n10_results.json`,
   `results/training_examples_n10.json`, `adapters/tier1_n10/`
 
-- [ ] **Phase 3 — N=50 data regime (Tier 1)**
-  Repeat DSPy + QLoRA at N=50 to see if the Tier 1 ceiling effect (both hit 100% at N=10)
-  changes, or if it's simply too easy a tier to differentiate methods on.
+- [x] **Phase 3 — N=50 data regime (Tier 1)**
+  Repeated DSPy + QLoRA at N=50 to test whether the N=10 ceiling effect (both 100%) held.
+  **Result (Tier 1, N=50, held-out):**
+  | Condition | Success rate |
+  |---|---|
+  | DSPy-optimized | 100% (8/8) |
+  | QLoRA fine-tuned | 100% (8/8) |
+
+  **Conclusion: Tier 1 saturates at both N=10 and N=50 for both methods.** This
+  confirms Tier 1 cannot differentiate DSPy vs. fine-tuning at these data regimes —
+  the real comparison has to come from Tier 2 (baseline 41.7%, plenty of headroom) and/or
+  Tier 3. Tier 1 results are still valuable as a "floor" reference point in the paper.
+
+  Files: `results/tier1_dspy_n50_results.json`, `results/tier1_qlora_n50_results.json`,
+  `results/training_examples_n50.json`, `adapters/tier1_n50/`
 
 - [ ] **Phase 4 — Extend DSPy + QLoRA to Tier 2 and Tier 3**
   This is likely where the real differentiation between methods shows up, since Tier 2's
@@ -87,6 +99,9 @@ multiple data regimes.
 - **Common Tier 2 failure mode #2:** repeated arg substitution errors on sequential calls
   to the same tool with different arguments (e.g. calling `get_weather` twice with the
   same city instead of two different cities).
+- **Tier 1 saturates at 100% for both methods, at both N=10 and N=50** — Tier 1 is not
+  where DSPy vs. fine-tuning differences will show up; Tier 2 (baseline 41.7%, far from
+  ceiling) is the tier to prioritize for Phase 4.
 - **Tier 1 and Tier 3 both hit ceiling effects at N=10** — both DSPy and QLoRA reached
   100% on held-out, suggesting N=10 may be enough data for the easier tiers, or that these
   tiers don't have enough headroom above the baseline to differentiate methods. Tier 2 is
