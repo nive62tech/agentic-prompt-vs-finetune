@@ -1,0 +1,157 @@
+[
+  {
+    "id": "t1_ho_001",
+    "prompt": "What's the current weather in Paris?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        }
+      }
+    ],
+    "final_text": "This JSON response indicates that the current temperature in Paris is 19 degrees Celsius, and the weather condition is cloudy.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_002",
+    "prompt": "Is Berlin cold right now?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Berlin"
+        }
+      }
+    ],
+    "final_text": "This JSON response indicates that the current temperature in Berlin is 14 degrees Celsius and the weather is rainy.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_003",
+    "prompt": "Weather in Sydney please.",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Sydney"
+        }
+      }
+    ],
+    "final_text": "This JSON response indicates that the current temperature in Sydney is 18 degrees Celsius and the weather is clear.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_004",
+    "prompt": "What's the price of a mouse?",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "mouse"
+        }
+      }
+    ],
+    "final_text": "This function call will return the price of a mouse in USD.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_005",
+    "prompt": "What's the INR to USD rate?",
+    "tool_calls": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "INR",
+          "target": "USD"
+        }
+      }
+    ],
+    "final_text": "The function `get_currency_rate` is called with the base currency as \"INR\" and the target currency as \"USD\". The response is a JSON object containing the exchange rate.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_006",
+    "prompt": "Convert 200 GBP to USD.",
+    "tool_calls": [
+      {
+        "tool": "convert_currency",
+        "args": {
+          "base": "GBP",
+          "target": "USD",
+          "amount": 200
+        }
+      }
+    ],
+    "final_text": "The function `convert_currency` was called with the arguments `base=\"GBP\"`, `target=\"USD\"`, and `amount=200`. The result is 254.0.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_007",
+    "prompt": "What do I have going on 2026-08-04?",
+    "tool_calls": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-04"
+        }
+      }
+    ],
+    "final_text": "This function call will return a JSON object with the calendar events for the specified date. The actual events will depend on the data in the calendar.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_008",
+    "prompt": "Find flights from Mumbai to Dubai.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Mumbai",
+          "destination": "Dubai"
+        }
+      },
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Mumbai",
+          "destination": "Dubai"
+        }
+      }
+    ],
+    "final_text": "The function `search_flights` was called with the parameters `origin=\"Mumbai\"` and `destination=\"Dubai\"`.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  }
+]

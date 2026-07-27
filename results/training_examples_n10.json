@@ -1,0 +1,76 @@
+[
+  {
+    "prompt": "Convert 50 USD to INR.",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 50,
+      "base": "USD",
+      "target": "INR"
+    }
+  },
+  {
+    "prompt": "Is it raining in Mumbai?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Mumbai"
+    }
+  },
+  {
+    "prompt": "Check the weather for Tokyo.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Tokyo"
+    }
+  },
+  {
+    "prompt": "What's the exchange rate from GBP to USD?",
+    "expected_tool": "get_currency_rate",
+    "expected_args": {
+      "base": "GBP",
+      "target": "USD"
+    }
+  },
+  {
+    "prompt": "Tell me the temperature in Sydney.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Sydney"
+    }
+  },
+  {
+    "prompt": "What's the weather in Sydney?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Sydney"
+    }
+  },
+  {
+    "prompt": "How hot is it in Berlin today?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Berlin"
+    }
+  },
+  {
+    "prompt": "What's the weather in Dubai?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Dubai"
+    }
+  },
+  {
+    "prompt": "What's the weather in Mumbai?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Mumbai"
+    }
+  },
+  {
+    "prompt": "What's the exchange rate from EUR to USD?",
+    "expected_tool": "get_currency_rate",
+    "expected_args": {
+      "base": "EUR",
+      "target": "USD"
+    }
+  }
+]
