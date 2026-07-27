@@ -1,0 +1,150 @@
+[
+  {
+    "id": "t1_ho_001",
+    "prompt": "What's the current weather in Paris?",
+    "raw_output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Paris\"}}",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        }
+      }
+    ],
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_002",
+    "prompt": "Is Berlin cold right now?",
+    "raw_output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Berlin\"}}",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Berlin"
+        }
+      }
+    ],
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_003",
+    "prompt": "Weather in Sydney please.",
+    "raw_output": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Sydney\"}}",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Sydney"
+        }
+      }
+    ],
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_004",
+    "prompt": "What's the price of a mouse?",
+    "raw_output": "{\"name\": \"lookup_price\", \"parameters\": {\"item\": \"mouse\"}}",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "mouse"
+        }
+      }
+    ],
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_005",
+    "prompt": "What's the INR to USD rate?",
+    "raw_output": "{\"name\": \"get_currency_rate\", \"parameters\": {\"base\": \"INR\", \"target\": \"USD\"}}",
+    "tool_calls": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "INR",
+          "target": "USD"
+        }
+      }
+    ],
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_006",
+    "prompt": "Convert 200 GBP to USD.",
+    "raw_output": "{\"name\": \"convert_currency\", \"parameters\": {\"amount\": 200, \"base\": \"GBP\", \"target\": \"USD\"}}",
+    "tool_calls": [
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 200,
+          "base": "GBP",
+          "target": "USD"
+        }
+      }
+    ],
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_007",
+    "prompt": "What do I have going on 2026-08-04?",
+    "raw_output": "{\"name\": \"get_calendar_events\", \"parameters\": {\"date\": \"2026-08-04\"}}",
+    "tool_calls": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-04"
+        }
+      }
+    ],
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_008",
+    "prompt": "Find flights from Mumbai to Dubai.",
+    "raw_output": "{\"name\": \"search_flights\", \"parameters\": {\"origin\": \"Mumbai\", \"destination\": \"Dubai\"}}",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Mumbai",
+          "destination": "Dubai"
+        }
+      }
+    ],
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  }
+]
