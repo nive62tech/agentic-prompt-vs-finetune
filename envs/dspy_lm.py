@@ -48,3 +48,12 @@ class LocalLlamaLM(dspy.LM):
         del inputs, out
         torch.cuda.empty_cache()
         return [decoded]
+
+    def __deepcopy__(self, memo):
+        """DSPy's internal optimizer machinery sometimes deep-copies the LM
+        object when tracking candidate programs. Since this LM wraps an 8B
+        parameter model, a real deepcopy tries to clone every weight tensor
+        and reliably OOMs a T4. There's nothing stateful here worth copying
+        anyway (model/tokenizer are shared, read-only during optimization),
+        so just return self instead of a real copy."""
+        return self

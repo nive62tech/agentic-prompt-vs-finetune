@@ -67,19 +67,38 @@ def build_trainset(training_examples: list) -> list:
     return trainset
 
 
-def optimize(lm, training_examples: list):
+def optimize(lm, training_examples: list, max_new_tokens: int = 150):
     """Runs MIPROv2 prompt optimization against the given training examples.
-    Returns the optimized DSPy program."""
+    Returns the optimized DSPy program.
+
+    Settings here are deliberately minimal (auto=None, num_candidates=1,
+    num_trials=3, all proposer variants disabled) rather than the fuller
+    "light" preset. The fuller preset repeatedly OOM'd a free-tier T4 with
+    an 8B model in 4-bit — these settings are what actually completed
+    successfully. Trade-off: shallower search than a full MIPROv2 run, but
+    reliable completion matters more than search depth at this data scale.
+    """
     dspy.settings.configure(lm=lm)
+    lm.max_new_tokens = max_new_tokens
     program = ToolCallProgram()
     trainset = build_trainset(training_examples)
 
-    optimizer = dspy.MIPROv2(metric=tier1_metric, auto="light", num_threads=1)
+    optimizer = dspy.MIPROv2(
+        metric=tier1_metric,
+        auto=None,
+        num_candidates=1,
+        num_threads=1,
+    )
     optimized_program = optimizer.compile(
         program, trainset=trainset,
-        max_bootstrapped_demos=1, max_labeled_demos=2,
+        num_trials=3,
+        max_bootstrapped_demos=1, max_labeled_demos=1,
         minibatch=False,
         requires_permission_to_run=False,
+        program_aware_proposer=False,
+        data_aware_proposer=False,
+        tip_aware_proposer=False,
+        fewshot_aware_proposer=False,
     )
     return optimized_program
 
