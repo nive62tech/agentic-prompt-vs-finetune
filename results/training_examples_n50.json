@@ -1,0 +1,385 @@
+[
+  {
+    "prompt": "Convert 50 USD to INR.",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 50,
+      "base": "USD",
+      "target": "INR"
+    }
+  },
+  {
+    "prompt": "Is it raining in Mumbai?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Mumbai"
+    }
+  },
+  {
+    "prompt": "Check the weather for Tokyo.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Tokyo"
+    }
+  },
+  {
+    "prompt": "What's the exchange rate from GBP to USD?",
+    "expected_tool": "get_currency_rate",
+    "expected_args": {
+      "base": "GBP",
+      "target": "USD"
+    }
+  },
+  {
+    "prompt": "Tell me the temperature in Sydney.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Sydney"
+    }
+  },
+  {
+    "prompt": "What's the weather in Sydney?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Sydney"
+    }
+  },
+  {
+    "prompt": "How hot is it in Berlin today?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Berlin"
+    }
+  },
+  {
+    "prompt": "What's the weather in Dubai?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Dubai"
+    }
+  },
+  {
+    "prompt": "Find flights from Paris to New York.",
+    "expected_tool": "search_flights",
+    "expected_args": {
+      "origin": "Paris",
+      "destination": "New York"
+    }
+  },
+  {
+    "prompt": "What's the weather in Mumbai?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Mumbai"
+    }
+  },
+  {
+    "prompt": "What's the exchange rate from EUR to USD?",
+    "expected_tool": "get_currency_rate",
+    "expected_args": {
+      "base": "EUR",
+      "target": "USD"
+    }
+  },
+  {
+    "prompt": "Search for flights from London to Tokyo.",
+    "expected_tool": "search_flights",
+    "expected_args": {
+      "origin": "London",
+      "destination": "Tokyo"
+    }
+  },
+  {
+    "prompt": "How much is 100 USD in EUR?",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 100,
+      "base": "USD",
+      "target": "EUR"
+    }
+  },
+  {
+    "prompt": "How hot is it in New York today?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "New York"
+    }
+  },
+  {
+    "prompt": "Convert 250 USD to GBP.",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 250,
+      "base": "USD",
+      "target": "GBP"
+    }
+  },
+  {
+    "prompt": "How much does a monitor cost?",
+    "expected_tool": "lookup_price",
+    "expected_args": {
+      "item": "monitor"
+    }
+  },
+  {
+    "prompt": "Tell me the temperature in Tokyo.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Tokyo"
+    }
+  },
+  {
+    "prompt": "Search for flights from Dubai to Singapore.",
+    "expected_tool": "search_flights",
+    "expected_args": {
+      "origin": "Dubai",
+      "destination": "Singapore"
+    }
+  },
+  {
+    "prompt": "Do I have anything scheduled on 2026-08-02?",
+    "expected_tool": "get_calendar_events",
+    "expected_args": {
+      "date": "2026-08-02"
+    }
+  },
+  {
+    "prompt": "Is it raining in Berlin?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Berlin"
+    }
+  },
+  {
+    "prompt": "Check the weather for Berlin.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Berlin"
+    }
+  },
+  {
+    "prompt": "What's the exchange rate from USD to EUR?",
+    "expected_tool": "get_currency_rate",
+    "expected_args": {
+      "base": "USD",
+      "target": "EUR"
+    }
+  },
+  {
+    "prompt": "How much is 100 USD in GBP?",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 100,
+      "base": "USD",
+      "target": "GBP"
+    }
+  },
+  {
+    "prompt": "How much is 100 INR in USD?",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 100,
+      "base": "INR",
+      "target": "USD"
+    }
+  },
+  {
+    "prompt": "What's the exchange rate from USD to GBP?",
+    "expected_tool": "get_currency_rate",
+    "expected_args": {
+      "base": "USD",
+      "target": "GBP"
+    }
+  },
+  {
+    "prompt": "Tell me the temperature in Paris.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Paris"
+    }
+  },
+  {
+    "prompt": "How much is 50 EUR in USD?",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 50,
+      "base": "EUR",
+      "target": "USD"
+    }
+  },
+  {
+    "prompt": "Convert 250 USD to INR.",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 250,
+      "base": "USD",
+      "target": "INR"
+    }
+  },
+  {
+    "prompt": "Convert 100 EUR to USD.",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 100,
+      "base": "EUR",
+      "target": "USD"
+    }
+  },
+  {
+    "prompt": "What's on my calendar for 2026-08-03?",
+    "expected_tool": "get_calendar_events",
+    "expected_args": {
+      "date": "2026-08-03"
+    }
+  },
+  {
+    "prompt": "What's the price of a monitor?",
+    "expected_tool": "lookup_price",
+    "expected_args": {
+      "item": "monitor"
+    }
+  },
+  {
+    "prompt": "Search for flights from New York to Paris.",
+    "expected_tool": "search_flights",
+    "expected_args": {
+      "origin": "New York",
+      "destination": "Paris"
+    }
+  },
+  {
+    "prompt": "What's the price of a keyboard?",
+    "expected_tool": "lookup_price",
+    "expected_args": {
+      "item": "keyboard"
+    }
+  },
+  {
+    "prompt": "What's on my calendar for 2026-08-02?",
+    "expected_tool": "get_calendar_events",
+    "expected_args": {
+      "date": "2026-08-02"
+    }
+  },
+  {
+    "prompt": "Search for flights from Paris to New York.",
+    "expected_tool": "search_flights",
+    "expected_args": {
+      "origin": "Paris",
+      "destination": "New York"
+    }
+  },
+  {
+    "prompt": "What's the weather in Tokyo?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Tokyo"
+    }
+  },
+  {
+    "prompt": "Tell me the temperature in Dubai.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Dubai"
+    }
+  },
+  {
+    "prompt": "Do I have anything scheduled on 2026-08-01?",
+    "expected_tool": "get_calendar_events",
+    "expected_args": {
+      "date": "2026-08-01"
+    }
+  },
+  {
+    "prompt": "How hot is it in Cairo today?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Cairo"
+    }
+  },
+  {
+    "prompt": "How much is 50 GBP in USD?",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 50,
+      "base": "GBP",
+      "target": "USD"
+    }
+  },
+  {
+    "prompt": "Check the weather for Dubai.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Dubai"
+    }
+  },
+  {
+    "prompt": "Convert 250 INR to USD.",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 250,
+      "base": "INR",
+      "target": "USD"
+    }
+  },
+  {
+    "prompt": "What is the EUR to USD rate?",
+    "expected_tool": "get_currency_rate",
+    "expected_args": {
+      "base": "EUR",
+      "target": "USD"
+    }
+  },
+  {
+    "prompt": "Find flights from Tokyo to London.",
+    "expected_tool": "search_flights",
+    "expected_args": {
+      "origin": "Tokyo",
+      "destination": "London"
+    }
+  },
+  {
+    "prompt": "How much is 50 INR in USD?",
+    "expected_tool": "convert_currency",
+    "expected_args": {
+      "amount": 50,
+      "base": "INR",
+      "target": "USD"
+    }
+  },
+  {
+    "prompt": "Look up the laptop price for me.",
+    "expected_tool": "lookup_price",
+    "expected_args": {
+      "item": "laptop"
+    }
+  },
+  {
+    "prompt": "Check the weather for New York.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "New York"
+    }
+  },
+  {
+    "prompt": "Tell me the temperature in Cairo.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Cairo"
+    }
+  },
+  {
+    "prompt": "Check the weather for Cairo.",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Cairo"
+    }
+  },
+  {
+    "prompt": "How hot is it in Sydney today?",
+    "expected_tool": "get_weather",
+    "expected_args": {
+      "city": "Sydney"
+    }
+  }
+]

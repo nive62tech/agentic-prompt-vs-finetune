@@ -1,0 +1,288 @@
+[
+  {
+    "id": "t1_ho_001",
+    "prompt": "What's the current weather in Paris?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        }
+      }
+    ],
+    "final_text": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Paris\"}}",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_002",
+    "prompt": "Is Berlin cold right now?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Berlin"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Berlin"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Berlin"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Berlin"
+        }
+      }
+    ],
+    "final_text": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Berlin\"}}",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_003",
+    "prompt": "Weather in Sydney please.",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Sydney"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Sydney"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Sydney"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Sydney"
+        }
+      }
+    ],
+    "final_text": "{\"name\": \"get_weather\", \"parameters\": {\"city\": \"Sydney\"}}",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_004",
+    "prompt": "What's the price of a mouse?",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "mouse"
+        }
+      }
+    ],
+    "final_text": "\"price_usd\" is not in the function parameters, so I will use \"price\" instead.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_005",
+    "prompt": "What's the INR to USD rate?",
+    "tool_calls": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "INR",
+          "target": "USD"
+        }
+      },
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "INR",
+          "target": "USD"
+        }
+      },
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "INR",
+          "target": "USD"
+        }
+      },
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "INR",
+          "target": "USD"
+        }
+      }
+    ],
+    "final_text": "{\"name\": \"get_currency_rate\", \"parameters\": {\"base\": \"INR\", \"target\": \"USD\"}}",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_006",
+    "prompt": "Convert 200 GBP to USD.",
+    "tool_calls": [
+      {
+        "tool": "convert_currency",
+        "args": {
+          "base": "GBP",
+          "target": "USD",
+          "amount": 200
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "base": "GBP",
+          "target": "USD",
+          "amount": 200
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "base": "GBP",
+          "target": "USD",
+          "amount": 200
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "base": "GBP",
+          "target": "USD",
+          "amount": 200
+        }
+      }
+    ],
+    "final_text": "{\"name\": \"convert_currency\", \"parameters\": {\"base\": \"GBP\", \"target\": \"USD\", \"amount\": 200}}",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_007",
+    "prompt": "What do I have going on 2026-08-04?",
+    "tool_calls": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-04"
+        }
+      },
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-04"
+        }
+      },
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-04"
+        }
+      },
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-04"
+        }
+      }
+    ],
+    "final_text": "{\"name\": \"get_calendar_events\", \"parameters\": {\"date\": \"2026-08-04\"}}",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t1_ho_008",
+    "prompt": "Find flights from Mumbai to Dubai.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "destination": "Dubai",
+          "origin": "Mumbai"
+        }
+      },
+      {
+        "tool": "search_flights",
+        "args": {
+          "destination": "Dubai",
+          "origin": "Mumbai"
+        }
+      },
+      {
+        "tool": "search_flights",
+        "args": {
+          "destination": "Dubai",
+          "origin": "Mumbai"
+        }
+      },
+      {
+        "tool": "search_flights",
+        "args": {
+          "destination": "Dubai",
+          "origin": "Mumbai"
+        }
+      }
+    ],
+    "final_text": "{\"name\": \"search_flights\", \"parameters\": {\"destination\": \"Dubai\", \"origin\": \"Mumbai\"}}",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  }
+]
