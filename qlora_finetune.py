@@ -76,7 +76,7 @@ def main(n: int, epochs: int = 3, output_dir: str = None):
         tokenizer.pad_token = tokenizer.eos_token
 
     model = AutoModelForCausalLM.from_pretrained(
-        MODEL_ID, quantization_config=bnb_config, device_map="auto"
+        MODEL_ID, quantization_config=bnb_config, device_map={"": 0}
     )
     model = prepare_model_for_kbit_training(model)
 
