@@ -1,0 +1,188 @@
+[
+  {
+    "prompt": "What's the USD to INR rate, and how much is 250 USD in INR?",
+    "expected_sequence": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "USD",
+          "target": "INR"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 250,
+          "base": "USD",
+          "target": "INR"
+        }
+      }
+    ],
+    "order_sensitive": false
+  },
+  {
+    "prompt": "What's the weather in London and Sydney? Which is nicer?",
+    "expected_sequence": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "London"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Sydney"
+        }
+      }
+    ],
+    "order_sensitive": false
+  },
+  {
+    "prompt": "What's the weather in Tokyo and Dubai? Which is nicer?",
+    "expected_sequence": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Tokyo"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Dubai"
+        }
+      }
+    ],
+    "order_sensitive": false
+  },
+  {
+    "prompt": "What's the weather in Paris and Berlin? Which is nicer?",
+    "expected_sequence": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Paris"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Berlin"
+        }
+      }
+    ],
+    "order_sensitive": false
+  },
+  {
+    "prompt": "What's the weather in Dubai and Berlin? Which is nicer?",
+    "expected_sequence": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Dubai"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Berlin"
+        }
+      }
+    ],
+    "order_sensitive": false
+  },
+  {
+    "prompt": "What's the weather in Mumbai and Singapore? Which is nicer?",
+    "expected_sequence": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Mumbai"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Singapore"
+        }
+      }
+    ],
+    "order_sensitive": false
+  },
+  {
+    "prompt": "What's the weather in New York and Mumbai? Which is nicer?",
+    "expected_sequence": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "New York"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Mumbai"
+        }
+      }
+    ],
+    "order_sensitive": false
+  },
+  {
+    "prompt": "What's the weather in London and Berlin? Which is nicer?",
+    "expected_sequence": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "London"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Berlin"
+        }
+      }
+    ],
+    "order_sensitive": false
+  },
+  {
+    "prompt": "What's the GBP to USD rate, and how much is 100 GBP in USD?",
+    "expected_sequence": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "GBP",
+          "target": "USD"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 100,
+          "base": "GBP",
+          "target": "USD"
+        }
+      }
+    ],
+    "order_sensitive": false
+  },
+  {
+    "prompt": "Check my calendar for 2026-08-04 and look up the price of a headphones.",
+    "expected_sequence": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-04"
+        }
+      },
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "headphones"
+        }
+      }
+    ],
+    "order_sensitive": false
+  }
+]

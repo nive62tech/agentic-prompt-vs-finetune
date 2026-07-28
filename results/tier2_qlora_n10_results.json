@@ -1,0 +1,193 @@
+[
+  {
+    "id": "t2_ho_001",
+    "prompt": "Find a flight from London to Tokyo and book it.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "London",
+          "destination": "Tokyo"
+        }
+      },
+      {
+        "tool": "book_flight",
+        "args": {
+          "flight_id": "LT202"
+        }
+      }
+    ],
+    "final_text": "The first function call searches for flights from London to Tokyo and the second function call books the flight with the ID \"LT202\".",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t2_ho_002",
+    "prompt": "What's the weather in Cairo and Sydney? Which is nicer?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Cairo"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Sydney"
+        }
+      },
+      {
+        "tool": "compare_weather",
+        "args": {
+          "city1": "Cairo",
+          "city2": "Sydney"
+        }
+      }
+    ],
+    "final_text": "The function \"compare_weather\" is not available in the given functions. The correct function to compare the weather of two cities is \"get_weather\" which returns the weather of a single city. To compare the weather of two cities, you can call \"get_weather\" twice and then compare the results.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t2_ho_003",
+    "prompt": "Convert 500 EUR to USD, then convert that USD amount to INR.",
+    "tool_calls": [
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 500,
+          "base": "EUR",
+          "target": "USD"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 545.0,
+          "base": "USD",
+          "target": "INR"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 500,
+          "base": "EUR",
+          "target": "USD"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 545.0,
+          "base": "USD",
+          "target": "INR"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 500,
+          "base": "EUR",
+          "target": "USD"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 545.0,
+          "base": "USD",
+          "target": "INR"
+        }
+      }
+    ],
+    "final_text": "{\"name\": \"convert_currency\", \"parameters\": {\"amount\": 545.0, \"base\": \"USD\", \"target\": \"INR\"}}",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t2_ho_004",
+    "prompt": "Check my calendar for 2026-08-03 and look up the price of a monitor.",
+    "tool_calls": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-03"
+        }
+      }
+    ],
+    "final_text": "This response assumes that the `get_calendar_events` function returns a dictionary with a key \"events\" containing a list of events for the given date. The `lookup_price` function returns a dictionary with a key \"price\" containing the price of the item.",
+    "grade": {
+      "success": false,
+      "failure_type": "missing_call",
+      "detail": "expected 2 calls, got 1"
+    }
+  },
+  {
+    "id": "t2_ho_005",
+    "prompt": "Find a flight from Paris to New York and book it.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Paris",
+          "destination": "New York"
+        }
+      },
+      {
+        "tool": "book_flight",
+        "args": {
+          "flight_id": "PN404"
+        }
+      }
+    ],
+    "final_text": "The first function call searches for flights from Paris to New York, and the second function call books the first flight found.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t2_ho_006",
+    "prompt": "What's the USD to GBP rate, and what's the weather in London?",
+    "tool_calls": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "USD",
+          "target": "GBP"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "London"
+        }
+      },
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "USD",
+          "target": "GBP"
+        }
+      }
+    ],
+    "final_text": "\"{\\\"city\\\": \\\"London\\\", \\\"temp_c\\\": 16, \\\"condition\\\": \\\"rainy\\\"}\"",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  }
+]
