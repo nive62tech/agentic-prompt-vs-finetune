@@ -70,14 +70,14 @@ multiple data regimes.
   Files: `results/tier1_dspy_n50_results.json`, `results/tier1_qlora_n50_results.json`,
   `results/training_examples_n50.json`, `adapters/tier1_n50/`
 
-- [ ] **Phase 4 — Extend DSPy + QLoRA to Tier 2 and Tier 3**
+- [x] **Phase 4 — Extend DSPy + QLoRA to Tier 2 and Tier 3**
   This is likely where the real differentiation between methods shows up, since Tier 2's
   baseline (41.7%) has far more room to improve than Tier 1's already-high baseline.
   Requires: extending `training_data.py`'s generator pattern to Tier 2/3, adapting the
   DSPy program to multi-turn chains (wrap the per-step predictor inside the run_agent loop
   instead of a single dspy.Predict call).
 
-- [ ] **Phase 5 — Analysis**
+- [x] **Phase 5 — Analysis**
   Build the decision-boundary chart (success rate vs. tier vs. data regime vs. method),
   generalization-gap comparison, failure-mode breakdown, compute-cost table (GPU-minutes,
   tokens/call).
