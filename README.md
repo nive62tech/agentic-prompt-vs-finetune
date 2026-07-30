@@ -82,7 +82,7 @@ multiple data regimes.
   generalization-gap comparison, failure-mode breakdown, compute-cost table (GPU-minutes,
   tokens/call).
 
-- [ ] **Phase 6 — Write-up**
+- [x] **Phase 6 — Write-up**
   Fill in Results/Discussion/Conclusion sections of `paper/paper_draft.docx` with the above,
   add figures/tables, finalize for TMLR submission.
 
