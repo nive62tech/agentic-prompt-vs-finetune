@@ -1,0 +1,189 @@
+[
+  {
+    "prompt": "Book flight MN654 for me.",
+    "type": "error",
+    "trigger_tool": "book_flight",
+    "trigger_args": {
+      "flight_id": "MN654"
+    },
+    "must_not_call": [],
+    "recovery_keywords": [
+      "invalid",
+      "not found",
+      "doesn't exist",
+      "unable",
+      "couldn't",
+      "no such flight",
+      "not a valid"
+    ]
+  },
+  {
+    "prompt": "What's the weather in Hobbiton?",
+    "type": "error",
+    "trigger_tool": "get_weather",
+    "trigger_args": {
+      "city": "Hobbiton"
+    },
+    "must_not_call": [],
+    "recovery_keywords": [
+      "not found",
+      "couldn't find",
+      "don't have",
+      "no data",
+      "unable",
+      "doesn't exist",
+      "not available",
+      "not a valid"
+    ]
+  },
+  {
+    "prompt": "What's the weather in Gotham?",
+    "type": "error",
+    "trigger_tool": "get_weather",
+    "trigger_args": {
+      "city": "Gotham"
+    },
+    "must_not_call": [],
+    "recovery_keywords": [
+      "not found",
+      "couldn't find",
+      "don't have",
+      "no data",
+      "unable",
+      "doesn't exist",
+      "not available",
+      "not a valid"
+    ]
+  },
+  {
+    "prompt": "What's the exchange rate from GBP to CHF?",
+    "type": "error",
+    "trigger_tool": "get_currency_rate",
+    "trigger_args": {
+      "base": "GBP",
+      "target": "CHF"
+    },
+    "must_not_call": [
+      "convert_currency"
+    ],
+    "recovery_keywords": [
+      "unsupported",
+      "not supported",
+      "don't support",
+      "does not support",
+      "not available",
+      "unable",
+      "not a valid"
+    ]
+  },
+  {
+    "prompt": "What's the price of a router?",
+    "type": "error",
+    "trigger_tool": "lookup_price",
+    "trigger_args": {
+      "item": "router"
+    },
+    "must_not_call": [],
+    "recovery_keywords": [
+      "not found",
+      "don't have",
+      "not available",
+      "not in",
+      "unable",
+      "no price",
+      "does not have"
+    ]
+  },
+  {
+    "prompt": "What's the price of a printer?",
+    "type": "error",
+    "trigger_tool": "lookup_price",
+    "trigger_args": {
+      "item": "printer"
+    },
+    "must_not_call": [],
+    "recovery_keywords": [
+      "not found",
+      "don't have",
+      "not available",
+      "not in",
+      "unable",
+      "no price",
+      "does not have"
+    ]
+  },
+  {
+    "prompt": "What's the price of a webcam?",
+    "type": "error",
+    "trigger_tool": "lookup_price",
+    "trigger_args": {
+      "item": "webcam"
+    },
+    "must_not_call": [],
+    "recovery_keywords": [
+      "not found",
+      "don't have",
+      "not available",
+      "not in",
+      "unable",
+      "no price",
+      "does not have"
+    ]
+  },
+  {
+    "prompt": "What's the weather in Rivendell?",
+    "type": "error",
+    "trigger_tool": "get_weather",
+    "trigger_args": {
+      "city": "Rivendell"
+    },
+    "must_not_call": [],
+    "recovery_keywords": [
+      "not found",
+      "couldn't find",
+      "don't have",
+      "no data",
+      "unable",
+      "doesn't exist",
+      "not available",
+      "not a valid"
+    ]
+  },
+  {
+    "prompt": "What's on my calendar for 2026-09-15?",
+    "type": "error",
+    "trigger_tool": "get_calendar_events",
+    "trigger_args": {
+      "date": "2026-09-15"
+    },
+    "must_not_call": [],
+    "recovery_keywords": [
+      "no data",
+      "not found",
+      "don't have",
+      "unable",
+      "no calendar",
+      "no information",
+      "does not have"
+    ]
+  },
+  {
+    "prompt": "What's the weather in Themyscira?",
+    "type": "error",
+    "trigger_tool": "get_weather",
+    "trigger_args": {
+      "city": "Themyscira"
+    },
+    "must_not_call": [],
+    "recovery_keywords": [
+      "not found",
+      "couldn't find",
+      "don't have",
+      "no data",
+      "unable",
+      "doesn't exist",
+      "not available",
+      "not a valid"
+    ]
+  }
+]
