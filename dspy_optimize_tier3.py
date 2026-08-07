@@ -17,7 +17,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import dspy
-from dspy_optimize_tier2 import ChainProgram
+from dspy_optimize_tier2 import ChainProgram, GuardedChainProgram
 from grader import grade_task
 
 
@@ -39,11 +39,14 @@ def build_trainset(training_examples: list) -> list:
     return trainset
 
 
-def optimize(lm, training_examples: list, max_new_tokens: int = 150, max_turns: int = 6):
-    """Same lightweight, proven-working MIPROv2 settings as Tier 1/Tier 2."""
+def optimize(lm, training_examples: list, max_new_tokens: int = 150, max_turns: int = 6, guarded: bool = False):
+    """Same lightweight, proven-working MIPROv2 settings as Tier 1/Tier 2.
+    Set guarded=True to use GuardedChainProgram (repetition + malformed-JSON
+    guards) instead of the plain ChainProgram used in the original Tier 3 run."""
     dspy.settings.configure(lm=lm)
     lm.max_new_tokens = max_new_tokens
-    program = ChainProgram(max_turns=max_turns)
+    program_class = GuardedChainProgram if guarded else ChainProgram
+    program = program_class(max_turns=max_turns)
     trainset = build_trainset(training_examples)
 
     optimizer = dspy.MIPROv2(

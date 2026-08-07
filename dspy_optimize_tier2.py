@@ -81,6 +81,99 @@ class ChainProgram(dspy.Module):
         return dspy.Prediction(tool_calls=tool_calls, final_text=final_text)
 
 
+class GuardedChainProgram(dspy.Module):
+    """
+    Same multi-turn loop as ChainProgram, plus two guards addressing the two
+    failure modes we directly diagnosed in Table 2:
+
+    1. Repetition guard — if the model's next proposed tool call has the
+       identical (tool, args) as one already in history, the call is NOT
+       re-executed. Instead the loop stops immediately and reports the
+       earlier failure, since re-issuing an identical call to a
+       deterministic simulator can only produce the identical result again.
+       This directly targets the "non-terminating identical-call
+       repetition" failure mode (5 of Table 2's diagnosed instances).
+
+    2. Malformed-JSON retry guard — if a turn's output can't be parsed as
+       either a tool call or a FINAL: answer, instead of immediately
+       treating the raw text as the final answer (ChainProgram's fallback),
+       the model gets ONE explicit corrective nudge ("your last response
+       could not be parsed... respond with either a tool call JSON or
+       FINAL: <answer>") before falling back. This directly targets the
+       "malformed tool-call JSON" failure mode (2 of Table 2's diagnosed
+       instances).
+
+    Both guards are implemented in the control flow around the same
+    dspy.Predict call used by ChainProgram — they do not require any
+    change to the DSPy signature or the optimization process itself, so
+    MIPROv2 optimizes the same underlying predictor; the guards simply
+    stop the loop from wasting turns on behavior we already know is
+    unproductive.
+    """
+
+    def __init__(self, max_turns: int = 6):
+        super().__init__()
+        self.predict = dspy.Predict(ChainStepSignature)
+        self.max_turns = max_turns
+
+    def forward(self, request):
+        history = []
+        tool_calls = []
+        final_text = ""
+        seen_calls = set()
+        malformed_retry_used = False
+
+        for _ in range(self.max_turns):
+            result = self.predict(
+                request=request,
+                tools=json.dumps(TOOL_SCHEMAS),
+                history=json.dumps(history),
+            )
+            action_text = result.action.strip()
+
+            if action_text.upper().startswith("FINAL:"):
+                final_text = action_text.split(":", 1)[1].strip()
+                break
+
+            call = parse_tool_call(action_text)
+
+            if call is None:
+                if not malformed_retry_used:
+                    # Guard 2: give one corrective nudge instead of giving up
+                    malformed_retry_used = True
+                    history.append({
+                        "tool": None, "args": None,
+                        "result": {"error": "Your previous response could not be parsed. "
+                                             "Respond with ONLY a valid tool call JSON "
+                                             "{\"name\": ..., \"parameters\": {...}} "
+                                             "or with FINAL: <answer>."},
+                    })
+                    continue
+                final_text = action_text
+                break
+
+            call_signature = (call["tool"], json.dumps(call["args"], sort_keys=True))
+            if call_signature in seen_calls:
+                # Guard 1: identical call already tried and already failed —
+                # stop instead of repeating it, and report that failure.
+                last_result = history[-1]["result"] if history else {}
+                final_text = (
+                    f"I already tried calling {call['tool']} with these "
+                    f"arguments and it failed ({last_result}). I'm not able "
+                    f"to complete this request."
+                )
+                break
+            seen_calls.add(call_signature)
+
+            tool_calls.append(call)
+            tool_result = call_tool(call["tool"], call["args"])
+            history.append({"tool": call["tool"], "args": call["args"], "result": tool_result})
+        else:
+            final_text = "(max turns reached without a final answer)"
+
+        return dspy.Prediction(tool_calls=tool_calls, final_text=final_text)
+
+
 def tier2_metric(example, prediction, trace=None) -> float:
     task = json.loads(example.task_json)
     grade = grade_task(task, tier=2, tool_calls=prediction.tool_calls)
