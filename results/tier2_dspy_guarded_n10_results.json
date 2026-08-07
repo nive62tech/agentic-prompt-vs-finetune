@@ -1,0 +1,210 @@
+[
+  {
+    "id": "t2_ho_001",
+    "prompt": "Find a flight from London to Tokyo and book it.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "London",
+          "destination": "Tokyo"
+        }
+      },
+      {
+        "tool": "book_flight",
+        "args": {
+          "flight_id": "LT202"
+        }
+      },
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "flight_id_LT202"
+        }
+      }
+    ],
+    "final_text": "I already tried calling lookup_price with these arguments and it failed ({'error': 'item not found: flight_id_LT202'}). I'm not able to complete this request.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t2_ho_002",
+    "prompt": "What's the weather in Cairo and Sydney? Which is nicer?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Cairo"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Sydney"
+        }
+      },
+      {
+        "tool": "compare_weather",
+        "args": {
+          "city1": "Cairo",
+          "city2": "Sydney"
+        }
+      }
+    ],
+    "final_text": "I already tried calling compare_weather with these arguments and it failed ({'error': 'unknown tool: compare_weather'}). I'm not able to complete this request.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t2_ho_003",
+    "prompt": "Convert 500 EUR to USD, then convert that USD amount to INR.",
+    "tool_calls": [
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 500,
+          "base": "EUR",
+          "target": "USD"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 545,
+          "base": "USD",
+          "target": "INR"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 45289.5,
+          "base": "INR",
+          "target": "USD"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 543.47,
+          "base": "USD",
+          "target": "INR"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 45162.36,
+          "base": "INR",
+          "target": "USD"
+        }
+      },
+      {
+        "tool": "convert_currency",
+        "args": {
+          "amount": 541.95,
+          "base": "USD",
+          "target": "INR"
+        }
+      }
+    ],
+    "final_text": "(max turns reached without a final answer)",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t2_ho_004",
+    "prompt": "Check my calendar for 2026-08-03 and look up the price of a monitor.",
+    "tool_calls": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-03"
+        }
+      },
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "monitor"
+        }
+      }
+    ],
+    "final_text": "I already tried calling lookup_price with these arguments and it failed ({'error': 'Your previous response could not be parsed. Respond with ONLY a valid tool call JSON {\"name\": ..., \"parameters\": {...}} or with FINAL: <answer>.'}). I'm not able to complete this request.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t2_ho_005",
+    "prompt": "Find a flight from Paris to New York and book it.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Paris",
+          "destination": "New York"
+        }
+      },
+      {
+        "tool": "book_flight",
+        "args": {
+          "flight_id": "PN404"
+        }
+      },
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "flight_id: PN404"
+        }
+      }
+    ],
+    "final_text": "I already tried calling lookup_price with these arguments and it failed ({'error': 'item not found: flight_id: PN404'}). I'm not able to complete this request.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t2_ho_006",
+    "prompt": "What's the USD to GBP rate, and what's the weather in London?",
+    "tool_calls": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "USD",
+          "target": "GBP"
+        }
+      },
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "London"
+        }
+      },
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "flight from London to Paris"
+        }
+      }
+    ],
+    "final_text": "I already tried calling lookup_price with these arguments and it failed ({'error': 'item not found: flight from London to Paris'}). I'm not able to complete this request.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  }
+]
