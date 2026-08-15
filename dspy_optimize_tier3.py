@@ -1,13 +1,7 @@
 """
 DSPy program + optimization for Tier 3 (error recovery).
-
-Reuses ChainProgram from dspy_optimize_tier2.py unchanged — it's already
-a generic bounded multi-turn loop (predict action -> execute -> feed back
--> repeat until FINAL:), which works for Tier 3's error-recovery tasks
-the same way it does for Tier 2's chains. Only the metric and trainset
-builder are Tier 3-specific, since Tier 3 tasks use a different schema
-(trigger_tool/trigger_args/must_not_call/recovery_keywords/type) than
-Tier 2's expected_sequence.
+Reuses ChainProgram/GuardedChainProgram from dspy_optimize_tier2.py.
+Phase 9: optimize() now accepts a seed parameter.
 """
 
 import json
@@ -31,18 +25,16 @@ def build_trainset(training_examples: list) -> list:
     trainset = []
     for ex in training_examples:
         trainset.append(
-            dspy.Example(
-                request=ex["prompt"],
-                task_json=json.dumps(ex),
-            ).with_inputs("request")
+            dspy.Example(request=ex["prompt"], task_json=json.dumps(ex)).with_inputs("request")
         )
     return trainset
 
 
-def optimize(lm, training_examples: list, max_new_tokens: int = 150, max_turns: int = 6, guarded: bool = False):
-    """Same lightweight, proven-working MIPROv2 settings as Tier 1/Tier 2.
-    Set guarded=True to use GuardedChainProgram (repetition + malformed-JSON
-    guards) instead of the plain ChainProgram used in the original Tier 3 run."""
+def optimize(lm, training_examples: list, max_new_tokens: int = 150, max_turns: int = 6,
+             guarded: bool = True, seed: int = 9):
+    """Phase 9: seed parameter added. guarded defaults to True here since
+    the guard is now the "real" version of Tier 3's DSPy condition
+    (un-guarded is kept only as the original diagnostic baseline)."""
     dspy.settings.configure(lm=lm)
     lm.max_new_tokens = max_new_tokens
     program_class = GuardedChainProgram if guarded else ChainProgram
@@ -54,6 +46,7 @@ def optimize(lm, training_examples: list, max_new_tokens: int = 150, max_turns: 
         auto=None,
         num_candidates=1,
         num_threads=1,
+        seed=seed,
     )
     optimized_program = optimizer.compile(
         program, trainset=trainset,
@@ -65,12 +58,12 @@ def optimize(lm, training_examples: list, max_new_tokens: int = 150, max_turns: 
         data_aware_proposer=False,
         tip_aware_proposer=False,
         fewshot_aware_proposer=False,
+        seed=seed,
     )
     return optimized_program
 
 
 def evaluate_program(program, eval_tasks: list) -> list:
-    """eval_tasks: TIER3_TASKS or TIER3_HELDOUT."""
     results = []
     for task in eval_tasks:
         prediction = program(request=task["prompt"])

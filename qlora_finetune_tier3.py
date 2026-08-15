@@ -1,15 +1,9 @@
 """
 QLoRA fine-tuning for Tier 3 (error recovery).
-
-Each training example is a full trajectory: user request -> assistant
-calls the trigger tool -> tool returns the real (error) result from the
-simulator -> assistant gives a final natural-language answer that
-surfaces the problem, built from one of the task's recovery_keywords.
-This teaches the model both to attempt the correct call AND to report
-the failure afterward, rather than just one half of that behavior.
-
-Run: `!python qlora_finetune_tier3.py --n 10`
-Saves the adapter to `adapters/tier3_n10/`.
+Phase 9: --seed argument added, --n now accepts 50 as well as 10
+(Tier 3's training pool has ~66 non-overlapping examples, enough for N=50).
+Run: !python qlora_finetune_tier3.py --n 10 --seed 42
+Saves the adapter to adapters/tier3_n{N}_seed{seed}/.
 """
 
 import argparse
@@ -36,7 +30,6 @@ MODEL_ID = "meta-llama/Llama-3.1-8B-Instruct"
 def build_chat_example(tokenizer, task: dict) -> str:
     trigger_result = call_tool(task["trigger_tool"], task["trigger_args"])
     target_call = json.dumps({"name": task["trigger_tool"], "parameters": task["trigger_args"]})
-
     final_answer = f"I'm sorry, I couldn't complete this — {task['recovery_keywords'][0]}. Please check and try again."
 
     messages = [
@@ -60,20 +53,18 @@ def build_dataset(tokenizer, training_examples: list, max_length: int = 768) -> 
     return ds.map(tokenize_fn, batched=True, remove_columns=["text"])
 
 
-def main(n: int, epochs: int = 3, output_dir: str = None):
-    output_dir = output_dir or f"adapters/tier3_n{n}"
+def main(n: int, seed: int, epochs: int = 3, output_dir: str = None):
+    output_dir = output_dir or f"adapters/tier3_n{n}_seed{seed}"
     os.makedirs(output_dir, exist_ok=True)
 
-    print(f"Sampling {n} Tier 3 training examples...")
-    training_examples = sample_tier3_training(n)
+    print(f"Sampling {n} Tier 3 training examples (seed={seed})...")
+    training_examples = sample_tier3_training(n, seed=seed)
     with open(os.path.join(output_dir, "training_examples.json"), "w") as f:
         json.dump(training_examples, f, indent=2)
 
     print("Loading base model (4-bit)...")
     bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_compute_dtype=torch.bfloat16,
-        bnb_4bit_quant_type="nf4",
+        load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16, bnb_4bit_quant_type="nf4",
     )
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
     if tokenizer.pad_token is None:
@@ -105,12 +96,11 @@ def main(n: int, epochs: int = 3, output_dir: str = None):
         save_strategy="no",
         bf16=True,
         report_to="none",
+        seed=seed,
     )
 
     trainer = Trainer(
-        model=model,
-        args=training_args,
-        train_dataset=train_ds,
+        model=model, args=training_args, train_dataset=train_ds,
         data_collator=DataCollatorForLanguageModeling(tokenizer, mlm=False),
     )
 
@@ -125,7 +115,8 @@ def main(n: int, epochs: int = 3, output_dir: str = None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--n", type=int, required=True, choices=[10], help="Data regime")
+    parser.add_argument("--n", type=int, required=True, choices=[10, 50], help="Data regime")
+    parser.add_argument("--seed", type=int, default=42, help="Random seed for data sampling + training")
     parser.add_argument("--epochs", type=int, default=3)
     args = parser.parse_args()
-    main(n=args.n, epochs=args.epochs)
+    main(n=args.n, seed=args.seed, epochs=args.epochs)
