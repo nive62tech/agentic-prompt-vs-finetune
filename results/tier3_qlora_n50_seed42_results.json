@@ -1,0 +1,112 @@
+[
+  {
+    "id": "t3_ho_001",
+    "prompt": "What's the weather in Wakanda?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Wakanda"
+        }
+      }
+    ],
+    "final_text": "I'm sorry, I couldn't complete this \u2014 not found. Please check and try again.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_ho_002",
+    "prompt": "Find a flight from Sydney to Mumbai and book it.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Sydney",
+          "destination": "Mumbai"
+        }
+      }
+    ],
+    "final_text": "I'm sorry, I couldn't complete this \u2014 no flights found. Please check and try again.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_ho_003",
+    "prompt": "What's the USD to JPY exchange rate?",
+    "tool_calls": [
+      {
+        "tool": "get_currency_rate",
+        "args": {
+          "base": "USD",
+          "target": "JPY"
+        }
+      }
+    ],
+    "final_text": "I'm sorry, I couldn't complete this \u2014 unsupported. Please check and try again.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_ho_004",
+    "prompt": "What's the price of a tripod?",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "tripod"
+        }
+      }
+    ],
+    "final_text": "I'm sorry, I couldn't complete this \u2014 not found. Please check and try again.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_ho_005",
+    "prompt": "Book flight AB123 for me.",
+    "tool_calls": [
+      {
+        "tool": "book_flight",
+        "args": {
+          "flight_id": "AB123"
+        }
+      }
+    ],
+    "final_text": "I'm sorry, I couldn't complete this \u2014 invalid. Please check and try again.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_ho_006",
+    "prompt": "What's on my calendar for 2026-08-15?",
+    "tool_calls": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-15"
+        }
+      }
+    ],
+    "final_text": "I'm sorry, I couldn't complete this \u2014 no calendar data. Please check and try again.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  }
+]
