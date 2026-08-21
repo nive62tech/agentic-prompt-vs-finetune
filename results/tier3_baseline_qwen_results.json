@@ -1,0 +1,163 @@
+[
+  {
+    "id": "t3_001",
+    "prompt": "What's the weather in Atlantis?",
+    "tool_calls": [
+      {
+        "tool": "get_weather",
+        "args": {
+          "city": "Atlantis"
+        }
+      }
+    ],
+    "final_text": "I'm sorry, but it seems that there is no record of a city named Atlantis. Could you please provide me with another city name?",
+    "grade": {
+      "success": false,
+      "failure_type": "no_recovery",
+      "detail": "final response did not surface the error to the user"
+    }
+  },
+  {
+    "id": "t3_002",
+    "prompt": "Find a flight from Cairo to Sydney and book it.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Cairo",
+          "destination": "Sydney"
+        }
+      }
+    ],
+    "final_text": "I'm sorry, but there are no direct flights available from Cairo to Sydney at this time. Would you like to consider alternative options such as connecting flights or different dates?",
+    "grade": {
+      "success": false,
+      "failure_type": "no_recovery",
+      "detail": "final response did not surface the error to the user"
+    }
+  },
+  {
+    "id": "t3_003",
+    "prompt": "Convert 100 USD to XAU.",
+    "tool_calls": [],
+    "final_text": "I'm sorry, but XAU is not a common currency code and usually represents gold. Could you please specify the target currency you want to convert 100 USD to? If you indeed meant to convert it to gold, we would need the current price of gold per unit which isn't directly provided by our tools. However, I can convert it to another currency if you provide one.\nIf you want to proceed with converting to gold, let me know the current price of gold per ounce or gram, and I can help with that calculation. Otherwise, please specify the target currency.",
+    "grade": {
+      "success": false,
+      "failure_type": "missing_call",
+      "detail": "no tool call made"
+    }
+  },
+  {
+    "id": "t3_004",
+    "prompt": "What's the price of a smartwatch?",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "smartwatch"
+        }
+      }
+    ],
+    "final_text": "I'm sorry, but it seems that there is no listing for a smartwatch in the catalog. Could you provide more details or check the spelling?",
+    "grade": {
+      "success": false,
+      "failure_type": "no_recovery",
+      "detail": "final response did not surface the error to the user"
+    }
+  },
+  {
+    "id": "t3_005",
+    "prompt": "Book flight ZZ999 for me.",
+    "tool_calls": [],
+    "final_text": "To book flight ZZ999 for you, I need to know the origin and destination cities. Could you please provide me with this information?",
+    "grade": {
+      "success": false,
+      "failure_type": "missing_call",
+      "detail": "no tool call made"
+    }
+  },
+  {
+    "id": "t3_006",
+    "prompt": "What's on my calendar for 2026-08-10?",
+    "tool_calls": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-10"
+        }
+      }
+    ],
+    "final_text": "It seems there is no calendar data available for August 10, 2026. Would you like to check another date?",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "t3_007",
+    "prompt": "Find a flight from Berlin to Cairo and book the cheapest one.",
+    "tool_calls": [
+      {
+        "tool": "search_flights",
+        "args": {
+          "origin": "Berlin",
+          "destination": "Cairo"
+        }
+      }
+    ],
+    "final_text": "I'm sorry, but there are no direct flights available from Berlin to Cairo. Would you like to consider alternative routes or connecting flights?",
+    "grade": {
+      "success": false,
+      "failure_type": "no_recovery",
+      "detail": "final response did not surface the error to the user"
+    }
+  },
+  {
+    "id": "t3_008",
+    "prompt": "What's the exchange rate from USD to XAU?",
+    "tool_calls": [],
+    "final_text": "The symbol 'XAU' represents gold, which is not a currency but a commodity. If you want to know the price of gold in USD, we can look that up. However, if you're looking for the exchange rate, you might be referring to converting USD to another currency. Could you please clarify which currency you would like to convert USD to? If you meant to find the price of gold, I can certainly help with that.\nIf you confirm your request, I will proceed accordingly.",
+    "grade": {
+      "success": false,
+      "failure_type": "missing_call",
+      "detail": "no tool call made"
+    }
+  },
+  {
+    "id": "t3_009",
+    "prompt": "What's on my calendar for 2026-08-04? Let me know if anything looks off.",
+    "tool_calls": [
+      {
+        "tool": "get_calendar_events",
+        "args": {
+          "date": "2026-08-04"
+        }
+      }
+    ],
+    "final_text": "On your calendar for August 4, 2026, you have a client call at 11am and a board meeting also starting at 11am. If anything looks off, please let me know!",
+    "grade": {
+      "success": false,
+      "failure_type": "no_recovery",
+      "detail": "final response did not flag the ambiguity/conflict"
+    }
+  },
+  {
+    "id": "t3_010",
+    "prompt": "Look up the price of a tablet.",
+    "tool_calls": [
+      {
+        "tool": "lookup_price",
+        "args": {
+          "item": "tablet"
+        }
+      }
+    ],
+    "final_text": "I'm sorry, but it seems that there is no information available about the price of a tablet in the current catalog. Would you like to try looking up the price of a different item?",
+    "grade": {
+      "success": false,
+      "failure_type": "no_recovery",
+      "detail": "final response did not surface the error to the user"
+    }
+  }
+]
