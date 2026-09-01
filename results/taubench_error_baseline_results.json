@@ -1,0 +1,138 @@
+[
+  {
+    "id": "tb_e_001",
+    "prompt": "Get the details of reservation XYZ999.",
+    "tool_calls": [
+      {
+        "tool": "get_reservation_details",
+        "args": {
+          "reservation_id": "XYZ999"
+        }
+      }
+    ],
+    "final_text": "The function `get_reservation_details` was called with the reservation ID \"XYZ999\", but the function returned an error message indicating that the reservation was not found. This suggests that the reservation ID \"XYZ999\" does not exist in the system.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "tb_e_002",
+    "prompt": "Search for direct flights from MIA to SEA.",
+    "tool_calls": [
+      {
+        "tool": "search_direct_flight",
+        "args": {
+          "origin": "MIA",
+          "destination": "SEA"
+        }
+      }
+    ],
+    "final_text": "This response indicates that there are no direct flights from MIA to SEA.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "tb_e_003",
+    "prompt": "Exchange the item in order ORD1002 for item88.",
+    "tool_calls": [
+      {
+        "tool": "exchange_delivered_order_items",
+        "args": {
+          "order_id": "ORD1002",
+          "new_item_id": "item88"
+        }
+      },
+      {
+        "tool": "exchange_delivered_order_items",
+        "args": {
+          "order_id": "ORD1002",
+          "new_item_id": "item88"
+        }
+      }
+    ],
+    "final_text": "This response indicates that the order with ID ORD1002 is not eligible for exchange because its status is pending.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "tb_e_004",
+    "prompt": "Get the details of order ORD9999.",
+    "tool_calls": [
+      {
+        "tool": "get_order_details",
+        "args": {
+          "order_id": "ORD9999"
+        }
+      }
+    ],
+    "final_text": "This response indicates that the order with ID ORD9999 was not found in the system.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "tb_e_005",
+    "prompt": "Book a flight for user004 with flight number HAT999.",
+    "tool_calls": [
+      {
+        "tool": "book_reservation",
+        "args": {
+          "user_id": "user004",
+          "flight_number": "HAT999"
+        }
+      }
+    ],
+    "final_text": "The flight number \"HAT999\" is not a valid flight number. The function \"book_reservation\" requires a valid flight number.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  },
+  {
+    "id": "tb_e_ho_001",
+    "prompt": "Cancel reservation ZZZ000.",
+    "tool_calls": [
+      {
+        "tool": "cancel_reservation",
+        "args": {
+          "reservation_id": "ZZZ000"
+        }
+      }
+    ],
+    "final_text": "This function call will attempt to cancel a reservation with the ID \"ZZZ000\". If the reservation exists, it will be cancelled; otherwise, an error message will be returned.",
+    "grade": {
+      "success": false,
+      "failure_type": "no_recovery",
+      "detail": "final response did not surface the error"
+    }
+  },
+  {
+    "id": "tb_e_ho_002",
+    "prompt": "Look up product item99.",
+    "tool_calls": [
+      {
+        "tool": "get_product_details",
+        "args": {
+          "item_id": "item99"
+        }
+      }
+    ],
+    "final_text": "The function `get_product_details` was called with the argument `item_id` set to `item99`, but the function returned an error message indicating that the product was not found. This suggests that the product with the ID `item99` does not exist in the database.",
+    "grade": {
+      "success": true,
+      "failure_type": null,
+      "detail": "ok"
+    }
+  }
+]
