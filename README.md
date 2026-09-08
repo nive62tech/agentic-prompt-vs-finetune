@@ -127,3 +127,7 @@ multiple data regimes.
     "expandable_segments:True"` before anything touches CUDA.
   - A Colab "Restart session" doesn't always fully release GPU memory — if errors persist,
     use "Disconnect and delete runtime" instead for a truly clean slate.
+
+
+
+The final paper drafted.
