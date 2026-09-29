@@ -1,0 +1,962 @@
+{
+  "sample_fraction": 0.25,
+  "seed": 99,
+  "total_sampled": 60,
+  "scored": 57,
+  "agreement_count": 22,
+  "agreement_rate": 0.38596491228070173,
+  "disagreements": [
+    {
+      "id": "t2_ho_006",
+      "source_file": "tier2_dspy_n10_seed123_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_006",
+      "source_file": "tier2_dspy_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_002",
+      "source_file": "tier3_baseline_qwen_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "no_recovery",
+        "detail": "final response did not surface the error to the user"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t1_ho_008",
+      "source_file": "tier1_dspy_n50_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_002",
+      "source_file": "tier2_baseline_qwen_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "expected 2 calls, got 1"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t1_ho_005",
+      "source_file": "tier1_dspy_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_003",
+      "source_file": "tier3_dspy_guarded_n10_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_001",
+      "source_file": "tier2_dspy_n10_seed123_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_002",
+      "source_file": "tier2_qlora_n10_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_004",
+      "source_file": "tier3_dspy_guarded_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_002",
+      "source_file": "tier3_dspy_guarded_n10_seed123_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_004",
+      "source_file": "tier2_qlora_n10_seed42_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "expected 2 calls, got 1"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_008",
+      "source_file": "tier3_baseline_qwen_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "no tool call made"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_ho_004",
+      "source_file": "tier2_qlora_n10_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "expected 2 calls, got 1"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_004",
+      "source_file": "tier3_qlora_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_001",
+      "source_file": "tier3_dspy_guarded_n10_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_005",
+      "source_file": "tier3_baseline_qwen_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "no tool call made"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_006",
+      "source_file": "tier3_dspy_guarded_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_002",
+      "source_file": "tier2_dspy_n10_seed123_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_003",
+      "source_file": "tier3_dspy_guarded_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t1_ho_001",
+      "source_file": "tier1_dspy_n50_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_003",
+      "source_file": "tier2_dspy_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_002",
+      "source_file": "tier3_qlora_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_001",
+      "source_file": "tier2_dspy_guarded_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_006",
+      "source_file": "tier3_dspy_guarded_n10_seed123_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_002",
+      "source_file": "tier3_dspy_guarded_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_005",
+      "source_file": "tier2_dspy_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_007",
+      "source_file": "tier2_baseline_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "expected 2 calls, got 1"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_006",
+      "source_file": "tier3_qlora_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_007",
+      "source_file": "tier2_baseline_qwen_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "expected 2 calls, got 1"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "tb_c_002",
+      "source_file": "taubench_chain_baseline_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "no matching call found for get_reservation_details {'reservation_id': 'DEF456'}"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_ho_005",
+      "source_file": "tier2_dspy_n10_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_001",
+      "source_file": "tier2_dspy_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_003",
+      "source_file": "tier2_qlora_n10_seed42_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "bad_args",
+        "detail": "expected {'amount': 545.0, 'base': 'USD', 'target': 'INR'}, got {'base': 'EUR', 'target': 'USD', 'amount': 500}"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_005",
+      "source_file": "tier3_dspy_guarded_n10_seed123_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "wrong_tool",
+        "detail": "expected first call book_flight, got search_flights"
+      },
+      "manual_judgment": true
+    }
+  ],
+  "all_judgments": [
+    {
+      "id": "t2_ho_006",
+      "source_file": "tier2_dspy_n10_seed123_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_006",
+      "source_file": "tier2_dspy_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t1_ho_006",
+      "source_file": "tier1_qlora_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_002",
+      "source_file": "tier3_baseline_qwen_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "no_recovery",
+        "detail": "final response did not surface the error to the user"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t1_ho_008",
+      "source_file": "tier1_dspy_n50_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t1_ho_005",
+      "source_file": "tier1_qlora_n50_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_002",
+      "source_file": "tier2_baseline_qwen_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "expected 2 calls, got 1"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t1_ho_005",
+      "source_file": "tier1_dspy_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_005",
+      "source_file": "tier3_dspy_guarded_n10_seed7_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "wrong_tool",
+        "detail": "expected first call book_flight, got search_flights"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t1_009",
+      "source_file": "tier1_baseline_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_003",
+      "source_file": "tier2_baseline_qwen_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_003",
+      "source_file": "tier3_dspy_guarded_n10_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_001",
+      "source_file": "tier2_dspy_n10_seed123_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_002",
+      "source_file": "tier2_qlora_n10_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_004",
+      "source_file": "tier3_dspy_guarded_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_002",
+      "source_file": "tier3_dspy_guarded_n10_seed123_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_004",
+      "source_file": "tier2_qlora_n10_seed42_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "expected 2 calls, got 1"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_003",
+      "source_file": "tier3_qlora_n10_seed7_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "no_recovery",
+        "detail": "final response did not surface the error to the user"
+      },
+      "manual_judgment": null
+    },
+    {
+      "id": "t3_008",
+      "source_file": "tier3_baseline_qwen_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "no tool call made"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_ho_004",
+      "source_file": "tier2_qlora_n10_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "expected 2 calls, got 1"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_004",
+      "source_file": "tier3_qlora_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_004",
+      "source_file": "tier2_dspy_n10_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_001",
+      "source_file": "tier3_dspy_guarded_n10_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_005",
+      "source_file": "tier3_baseline_qwen_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "no tool call made"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_ho_005",
+      "source_file": "tier2_qlora_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t1_ho_002",
+      "source_file": "tier1_qlora_n50_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_001",
+      "source_file": "tier3_dspy_n10_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "no_recovery",
+        "detail": "final response did not surface the error to the user"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_006",
+      "source_file": "tier3_dspy_guarded_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_004",
+      "source_file": "tier2_dspy_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_ho_002",
+      "source_file": "tier2_dspy_n10_seed123_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_003",
+      "source_file": "tier3_dspy_guarded_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t1_ho_001",
+      "source_file": "tier1_qlora_n50_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t1_ho_001",
+      "source_file": "tier1_dspy_n50_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_003",
+      "source_file": "tier2_dspy_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_008",
+      "source_file": "tier3_baseline_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_002",
+      "source_file": "tier3_qlora_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_006",
+      "source_file": "tier2_qlora_n10_seed7_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_ho_001",
+      "source_file": "tier2_dspy_guarded_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t1_008",
+      "source_file": "tier1_baseline_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_006",
+      "source_file": "tier3_dspy_guarded_n10_seed123_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_005",
+      "source_file": "tier3_qlora_n10_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_002",
+      "source_file": "tier3_dspy_guarded_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t3_ho_001",
+      "source_file": "tier3_qlora_n10_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_ho_005",
+      "source_file": "tier2_dspy_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_007",
+      "source_file": "tier2_baseline_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "expected 2 calls, got 1"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_006",
+      "source_file": "tier3_qlora_n50_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "tb_e_004",
+      "source_file": "taubench_error_baseline_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": null
+    },
+    {
+      "id": "t2_007",
+      "source_file": "tier2_baseline_qwen_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "expected 2 calls, got 1"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_ho_003",
+      "source_file": "tier2_qlora_n10_seed7_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "tb_c_002",
+      "source_file": "taubench_chain_baseline_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "missing_call",
+        "detail": "no matching call found for get_reservation_details {'reservation_id': 'DEF456'}"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_ho_005",
+      "source_file": "tier2_dspy_n10_seed42_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t1_ho_007",
+      "source_file": "tier1_qlora_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t2_ho_001",
+      "source_file": "tier2_dspy_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_003",
+      "source_file": "tier2_qlora_n10_seed42_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "bad_args",
+        "detail": "expected {'amount': 545.0, 'base': 'USD', 'target': 'INR'}, got {'base': 'EUR', 'target': 'USD', 'amount': 500}"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t1_007",
+      "source_file": "tier1_baseline_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_ho_003",
+      "source_file": "tier3_dspy_n10_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "no_recovery",
+        "detail": "final response did not surface the error to the user"
+      },
+      "manual_judgment": false
+    },
+    {
+      "id": "t2_ho_005",
+      "source_file": "tier2_qlora_n10_seed123_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t1_ho_005",
+      "source_file": "tier1_qlora_n10_results.json",
+      "original_grade": {
+        "success": true,
+        "failure_type": null,
+        "detail": "ok"
+      },
+      "manual_judgment": true
+    },
+    {
+      "id": "t3_004",
+      "source_file": "tier3_baseline_qwen_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "no_recovery",
+        "detail": "final response did not surface the error to the user"
+      },
+      "manual_judgment": null
+    },
+    {
+      "id": "t3_ho_005",
+      "source_file": "tier3_dspy_guarded_n10_seed123_results.json",
+      "original_grade": {
+        "success": false,
+        "failure_type": "wrong_tool",
+        "detail": "expected first call book_flight, got search_flights"
+      },
+      "manual_judgment": true
+    }
+  ]
+}
